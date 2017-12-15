@@ -95,14 +95,16 @@ My final model consisted of the following layers serialy connected one after the
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-I trained the model using Adam optimizer to minimize cross entropy mean computed using the softmax_cross_entropy_with_logits() function from TensorFlow's nn module. For learning rate, batch size and number of epochs parameters values from LeNet implementation were used. I attempted to use various number of training epochs: 15, 20 and 30 but all of them althoug producing better validation accuracy values lead to overtraining of the network. This showd that the network could not correctly classify all of the test examples found on the internet. Most common missclassification occured with the Speed limit (120km/h) sign that would be classified as Speed limit (20km/h) or as Wild animals crossing sign. When 10 training epochs were used the network showed lower validation accuracy but all the test signs were correctly classified.  
+I trained the model using Adam optimizer to minimize cross entropy mean computed using the softmax_cross_entropy_with_logits() function from TensorFlow's nn module. For learning rate, batch size and number of epochs parameters values from LeNet implementation were used. I attempted to use various number of training epochs: 15, 20 and 30 but all of them although producing better validation accuracy values lead to overtraining of the network. This showed that the network could not correctly classify all of the test examples found on the internet. Most common missclassification occured with the Speed limit (120km/h) sign that would be classified as Speed limit (20km/h) or as Wild animals crossing sign. When 10 training epochs were used the network showed lower validation accuracy but all the test signs were correctly classified.  
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.999
-* validation set accuracy of 0.960 
-* test set accuracy of 0.936
+* training set accuracy of 0.993
+* validation set accuracy of 0.935 
+* test set accuracy of 0.932
+
+Results of up to 0.965 accuracy on the validation set were achieved with this model and these hyperparameters but unfortunately I trained the model again. Since these results are also within the specification I decided to keep them for this writeup.
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -156,7 +158,7 @@ Here are the results of the prediction:
 
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 93.6%. The model had some trouble in predicting the "Speed limit (120km/h)" sign due to it being similar with other speed limit signs. We will see this in the next section.
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 93.2%. The model had some trouble in predicting the "Speed limit (120km/h)" sign due to it being similar with other speed limit signs. We will see this in the next section.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
